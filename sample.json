@@ -1,0 +1,60 @@
+{
+    "accountNumber": {
+        "value": "740561073"
+    },
+    "rateRequestControlParameters": {
+        "returnTransitTimes": false,
+        "servicesNeededOnRateFailure": true,
+        "variableOptions": "FREIGHT_GUARANTEE",
+        "rateSortOrder": "SERVICENAMETRADITIONAL"
+    },
+    "requestedShipment": {
+        "shipper": {
+            "address": {
+                "postalCode": 75063,
+                "countryCode": "US"
+            }
+        },
+        "recipient": {
+            "address": {
+                "postalCode": "Du",
+                "countryCode": "AE"
+            }
+        },
+        "shipDateStamp": "2024-10-16",
+        "pickupType": "DROPOFF_AT_FEDEX_LOCATION",
+        "serviceType": "",
+        "rateRequestType": ["LIST", "ACCOUNT"],
+        "customsClearanceDetail": {
+            "dutiesPayment": {
+                "paymentType": "SENDER",
+                "payor": {
+                    "responsibleParty": null
+                }
+            },
+            "commodities": [
+                {
+                    "description": "Camera",
+                    "quantity": 1,
+                    "quantityUnits": "PCS",
+                    "weight": {
+                        "units": "KG",
+                        "value": 20
+                    },
+                    "customsValue": {
+                        "amount": 100,
+                        "currency": "USD"
+                    }
+                }
+            ]
+        },
+        "requestedPackageLineItems": [
+            {
+                "weight": {
+                    "units": "KG",
+                    "value": 20
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,63 @@
+/* Scrollbar Styles for Webkit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #d6d6d6; /* Track color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8b8a8a; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #3d3c3c; /* Scrollbar color on hover */
+}
+
+/* Scrollbar Styles for Firefox */
+/* * {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+} */
+
+/* Optional: Apply Custom Scrollbar only on specific elements */
+.custom-scrollbar {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+/* Customize the scrollbar for specific sections */
+/* .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #1b1919;
+    border-radius: 10px;
+} */
+
+/* Customs */
+
+/* shipping */
+.custom_bg_shipping {
+    background-image: url("../img/shipping/shipping.jpg");
+    background-color: rgba(15, 14, 14, 0.089);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    outline: none;
+    margin-top: 1.5rem;
+}
+/* end shipping */

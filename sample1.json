@@ -1,0 +1,499 @@
+{
+    "transactionId": "5a0b1acd-06a7-4f7e-8b97-d0de47fe8a75",
+    "output": {
+        "rateReplyDetails": [
+            {
+                "serviceType": "FEDEX_INTERNATIONAL_PRIORITY_EXPRESS",
+                "serviceName": "FedEx International Priority® Express",
+                "packagingType": "YOUR_PACKAGING",
+                "customerMessages": [
+                    {
+                        "code": "SERVICE.TYPE.INTERNATIONAL.MESSAGE",
+                        "message": "Rate does not include duties & taxes, clearance entry fees or other import fees.  The payor of duties/taxes/fees will be responsible for any applicable Clearance Entry Fees."
+                    }
+                ],
+                "ratedShipmentDetails": [
+                    {
+                        "rateType": "ACCOUNT",
+                        "ratedWeightMethod": "ACTUAL",
+                        "totalDiscounts": 0.0,
+                        "totalBaseCharge": 1220.95,
+                        "totalNetCharge": 1477.44,
+                        "totalVatCharge": 0.0,
+                        "totalNetFedExCharge": 1477.44,
+                        "totalDutiesAndTaxes": 0.0,
+                        "totalNetChargeWithDutiesAndTaxes": 1477.44,
+                        "totalDutiesTaxesAndFees": 0.0,
+                        "totalAncillaryFeesAndTaxes": 0.0,
+                        "shipmentRateDetail": {
+                            "rateZone": "B",
+                            "dimDivisor": 139,
+                            "fuelSurchargePercent": 19.5,
+                            "totalSurcharges": 256.49,
+                            "totalFreightDiscount": 0.0,
+                            "surCharges": [
+                                {
+                                    "type": "FUEL",
+                                    "description": "Fuel Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 241.09
+                                },
+                                {
+                                    "type": "DEMAND",
+                                    "description": "Demand Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 15.4
+                                }
+                            ],
+                            "pricingCode": "",
+                            "currencyExchangeRate": {
+                                "fromCurrency": "USD",
+                                "intoCurrency": "USD",
+                                "rate": 1.0
+                            },
+                            "totalBillingWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            },
+                            "dimDivisorType": "COUNTRY",
+                            "currency": "USD",
+                            "rateScale": "TZ001OFB_2A_YOUR_PACKAGING",
+                            "totalRateScaleWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            }
+                        },
+                        "ratedPackages": [
+                            {
+                                "groupNumber": 0,
+                                "effectiveNetDiscount": 0.0,
+                                "packageRateDetail": {
+                                    "rateType": "PAYOR_ACCOUNT_SHIPMENT",
+                                    "ratedWeightMethod": "ACTUAL",
+                                    "baseCharge": 1220.95,
+                                    "netFreight": 1220.95,
+                                    "totalSurcharges": 256.49,
+                                    "netFedExCharge": 1477.44,
+                                    "totalTaxes": 0.0,
+                                    "netCharge": 1477.44,
+                                    "totalRebates": 0.0,
+                                    "billingWeight": {
+                                        "units": "KG",
+                                        "value": 20.0
+                                    },
+                                    "totalFreightDiscounts": 0.0,
+                                    "surcharges": [
+                                        {
+                                            "type": "FUEL",
+                                            "description": "Fuel Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 241.09
+                                        },
+                                        {
+                                            "type": "DEMAND",
+                                            "description": "Demand Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 15.4
+                                        }
+                                    ],
+                                    "currency": "USD"
+                                },
+                                "sequenceNumber": 1
+                            }
+                        ],
+                        "currency": "USD"
+                    },
+                    {
+                        "rateType": "LIST",
+                        "ratedWeightMethod": "ACTUAL",
+                        "totalDiscounts": 0.0,
+                        "totalBaseCharge": 1220.95,
+                        "totalNetCharge": 1477.44,
+                        "totalVatCharge": 0.0,
+                        "totalNetFedExCharge": 1477.44,
+                        "totalDutiesAndTaxes": 0.0,
+                        "totalNetChargeWithDutiesAndTaxes": 1477.44,
+                        "totalDutiesTaxesAndFees": 0.0,
+                        "totalAncillaryFeesAndTaxes": 0.0,
+                        "shipmentRateDetail": {
+                            "rateZone": "B",
+                            "dimDivisor": 139,
+                            "fuelSurchargePercent": 19.5,
+                            "totalSurcharges": 256.49,
+                            "totalFreightDiscount": 0.0,
+                            "surCharges": [
+                                {
+                                    "type": "FUEL",
+                                    "description": "Fuel Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 241.09
+                                },
+                                {
+                                    "type": "DEMAND",
+                                    "description": "Demand Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 15.4
+                                }
+                            ],
+                            "pricingCode": "",
+                            "currencyExchangeRate": {
+                                "fromCurrency": "USD",
+                                "intoCurrency": "USD",
+                                "rate": 1.0
+                            },
+                            "totalBillingWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            },
+                            "dimDivisorType": "COUNTRY",
+                            "currency": "USD",
+                            "rateScale": "TZ001OFB_2A_YOUR_PACKAGING",
+                            "totalRateScaleWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            }
+                        },
+                        "ratedPackages": [
+                            {
+                                "groupNumber": 0,
+                                "effectiveNetDiscount": 0.0,
+                                "packageRateDetail": {
+                                    "rateType": "PAYOR_LIST_SHIPMENT",
+                                    "ratedWeightMethod": "ACTUAL",
+                                    "baseCharge": 1220.95,
+                                    "netFreight": 1220.95,
+                                    "totalSurcharges": 256.49,
+                                    "netFedExCharge": 1477.44,
+                                    "totalTaxes": 0.0,
+                                    "netCharge": 1477.44,
+                                    "totalRebates": 0.0,
+                                    "billingWeight": {
+                                        "units": "KG",
+                                        "value": 20.0
+                                    },
+                                    "totalFreightDiscounts": 0.0,
+                                    "surcharges": [
+                                        {
+                                            "type": "FUEL",
+                                            "description": "Fuel Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 241.09
+                                        },
+                                        {
+                                            "type": "DEMAND",
+                                            "description": "Demand Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 15.4
+                                        }
+                                    ],
+                                    "currency": "USD"
+                                },
+                                "sequenceNumber": 1
+                            }
+                        ],
+                        "currency": "USD"
+                    }
+                ],
+                "operationalDetail": {
+                    "ineligibleForMoneyBackGuarantee": false,
+                    "astraDescription": "IPE",
+                    "airportId": "YYZ",
+                    "serviceCode": "2A"
+                },
+                "signatureOptionType": "SERVICE_DEFAULT",
+                "serviceDescription": {
+                    "serviceId": "EP1000000299",
+                    "serviceType": "FEDEX_INTERNATIONAL_PRIORITY_EXPRESS",
+                    "code": "2A",
+                    "names": [
+                        {
+                            "type": "long",
+                            "encoding": "utf-8",
+                            "value": "FedEx International Priority® Express"
+                        },
+                        {
+                            "type": "long",
+                            "encoding": "ascii",
+                            "value": "FedEx International Priority Express"
+                        },
+                        {
+                            "type": "medium",
+                            "encoding": "utf-8",
+                            "value": "FedEx Intl Priority Express"
+                        },
+                        {
+                            "type": "medium",
+                            "encoding": "ascii",
+                            "value": "FedEx Intl Priority Express"
+                        },
+                        {
+                            "type": "short",
+                            "encoding": "utf-8",
+                            "value": "IPM"
+                        },
+                        {
+                            "type": "short",
+                            "encoding": "ascii",
+                            "value": "IPM"
+                        },
+                        {
+                            "type": "abbrv",
+                            "encoding": "ascii",
+                            "value": "LO"
+                        }
+                    ],
+                    "serviceCategory": "parcel",
+                    "description": "International Priority Express (IP EXP)",
+                    "astraDescription": "IPE"
+                }
+            },
+            {
+                "serviceType": "FEDEX_INTERNATIONAL_PRIORITY",
+                "serviceName": "FedEx International Priority®",
+                "packagingType": "YOUR_PACKAGING",
+                "customerMessages": [
+                    {
+                        "code": "SERVICE.TYPE.INTERNATIONAL.MESSAGE",
+                        "message": "Rate does not include duties & taxes, clearance entry fees or other import fees.  The payor of duties/taxes/fees will be responsible for any applicable Clearance Entry Fees."
+                    }
+                ],
+                "ratedShipmentDetails": [
+                    {
+                        "rateType": "ACCOUNT",
+                        "ratedWeightMethod": "ACTUAL",
+                        "totalDiscounts": 0.0,
+                        "totalBaseCharge": 1220.95,
+                        "totalNetCharge": 1477.44,
+                        "totalVatCharge": 0.0,
+                        "totalNetFedExCharge": 1477.44,
+                        "totalDutiesAndTaxes": 0.0,
+                        "totalNetChargeWithDutiesAndTaxes": 1477.44,
+                        "totalDutiesTaxesAndFees": 0.0,
+                        "totalAncillaryFeesAndTaxes": 0.0,
+                        "shipmentRateDetail": {
+                            "rateZone": "B",
+                            "dimDivisor": 139,
+                            "fuelSurchargePercent": 19.5,
+                            "totalSurcharges": 256.49,
+                            "totalFreightDiscount": 0.0,
+                            "surCharges": [
+                                {
+                                    "type": "FUEL",
+                                    "description": "Fuel Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 241.09
+                                },
+                                {
+                                    "type": "DEMAND",
+                                    "description": "Demand Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 15.4
+                                }
+                            ],
+                            "pricingCode": "",
+                            "currencyExchangeRate": {
+                                "fromCurrency": "USD",
+                                "intoCurrency": "USD",
+                                "rate": 1.0
+                            },
+                            "totalBillingWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            },
+                            "dimDivisorType": "COUNTRY",
+                            "currency": "USD",
+                            "rateScale": "TZ001OFB_2P_YOUR_PACKAGING",
+                            "totalRateScaleWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            }
+                        },
+                        "ratedPackages": [
+                            {
+                                "groupNumber": 0,
+                                "effectiveNetDiscount": 0.0,
+                                "packageRateDetail": {
+                                    "rateType": "PAYOR_ACCOUNT_SHIPMENT",
+                                    "ratedWeightMethod": "ACTUAL",
+                                    "baseCharge": 1220.95,
+                                    "netFreight": 1220.95,
+                                    "totalSurcharges": 256.49,
+                                    "netFedExCharge": 1477.44,
+                                    "totalTaxes": 0.0,
+                                    "netCharge": 1477.44,
+                                    "totalRebates": 0.0,
+                                    "billingWeight": {
+                                        "units": "KG",
+                                        "value": 20.0
+                                    },
+                                    "totalFreightDiscounts": 0.0,
+                                    "surcharges": [
+                                        {
+                                            "type": "FUEL",
+                                            "description": "Fuel Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 241.09
+                                        },
+                                        {
+                                            "type": "DEMAND",
+                                            "description": "Demand Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 15.4
+                                        }
+                                    ],
+                                    "currency": "USD"
+                                },
+                                "sequenceNumber": 1
+                            }
+                        ],
+                        "currency": "USD"
+                    },
+                    {
+                        "rateType": "LIST",
+                        "ratedWeightMethod": "ACTUAL",
+                        "totalDiscounts": 0.0,
+                        "totalBaseCharge": 1220.95,
+                        "totalNetCharge": 1477.44,
+                        "totalVatCharge": 0.0,
+                        "totalNetFedExCharge": 1477.44,
+                        "totalDutiesAndTaxes": 0.0,
+                        "totalNetChargeWithDutiesAndTaxes": 1477.44,
+                        "totalDutiesTaxesAndFees": 0.0,
+                        "totalAncillaryFeesAndTaxes": 0.0,
+                        "shipmentRateDetail": {
+                            "rateZone": "B",
+                            "dimDivisor": 139,
+                            "fuelSurchargePercent": 19.5,
+                            "totalSurcharges": 256.49,
+                            "totalFreightDiscount": 0.0,
+                            "surCharges": [
+                                {
+                                    "type": "FUEL",
+                                    "description": "Fuel Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 241.09
+                                },
+                                {
+                                    "type": "DEMAND",
+                                    "description": "Demand Surcharge",
+                                    "level": "SHIPMENT",
+                                    "amount": 15.4
+                                }
+                            ],
+                            "pricingCode": "",
+                            "currencyExchangeRate": {
+                                "fromCurrency": "USD",
+                                "intoCurrency": "USD",
+                                "rate": 1.0
+                            },
+                            "totalBillingWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            },
+                            "dimDivisorType": "COUNTRY",
+                            "currency": "USD",
+                            "rateScale": "TZ001OFB_2P_YOUR_PACKAGING",
+                            "totalRateScaleWeight": {
+                                "units": "KG",
+                                "value": 20.0
+                            }
+                        },
+                        "ratedPackages": [
+                            {
+                                "groupNumber": 0,
+                                "effectiveNetDiscount": 0.0,
+                                "packageRateDetail": {
+                                    "rateType": "PAYOR_LIST_SHIPMENT",
+                                    "ratedWeightMethod": "ACTUAL",
+                                    "baseCharge": 1220.95,
+                                    "netFreight": 1220.95,
+                                    "totalSurcharges": 256.49,
+                                    "netFedExCharge": 1477.44,
+                                    "totalTaxes": 0.0,
+                                    "netCharge": 1477.44,
+                                    "totalRebates": 0.0,
+                                    "billingWeight": {
+                                        "units": "KG",
+                                        "value": 20.0
+                                    },
+                                    "totalFreightDiscounts": 0.0,
+                                    "surcharges": [
+                                        {
+                                            "type": "FUEL",
+                                            "description": "Fuel Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 241.09
+                                        },
+                                        {
+                                            "type": "DEMAND",
+                                            "description": "Demand Surcharge",
+                                            "level": "SHIPMENT",
+                                            "amount": 15.4
+                                        }
+                                    ],
+                                    "currency": "USD"
+                                },
+                                "sequenceNumber": 1
+                            }
+                        ],
+                        "currency": "USD"
+                    }
+                ],
+                "operationalDetail": {
+                    "ineligibleForMoneyBackGuarantee": false,
+                    "astraDescription": "IP EOD",
+                    "airportId": "YYZ",
+                    "serviceCode": "2P"
+                },
+                "signatureOptionType": "SERVICE_DEFAULT",
+                "serviceDescription": {
+                    "serviceId": "EP1000000300",
+                    "serviceType": "FEDEX_INTERNATIONAL_PRIORITY",
+                    "code": "2P",
+                    "names": [
+                        {
+                            "type": "long",
+                            "encoding": "utf-8",
+                            "value": "FedEx International Priority®"
+                        },
+                        {
+                            "type": "long",
+                            "encoding": "ascii",
+                            "value": "FedEx International Priority"
+                        },
+                        {
+                            "type": "medium",
+                            "encoding": "utf-8",
+                            "value": "FedEx International Priority"
+                        },
+                        {
+                            "type": "medium",
+                            "encoding": "ascii",
+                            "value": "FedEx International Priority"
+                        },
+                        {
+                            "type": "short",
+                            "encoding": "utf-8",
+                            "value": "IPED"
+                        },
+                        {
+                            "type": "short",
+                            "encoding": "ascii",
+                            "value": "IPED"
+                        },
+                        {
+                            "type": "abbrv",
+                            "encoding": "ascii",
+                            "value": "OA"
+                        }
+                    ],
+                    "serviceCategory": "parcel",
+                    "description": "International Priority EOD (IP EOD)",
+                    "astraDescription": "IP EOD"
+                }
+            }
+        ],
+        "quoteDate": "2024-10-16",
+        "encoded": false
+    }
+}
