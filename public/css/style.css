@@ -1,24 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-} */
-
 * {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /* OLD STYLES1 */
 
 #eamon {
@@ -45,7 +37,7 @@
     border: 2px solid green;
 }
 #landing {
-    background-image: url("<?php echo base_url() ?>assets/images/site/homePage1.png");
+    background-image: url("assets/images/site/homePage1.png");
 
     height: 809px;
 
@@ -103,7 +95,7 @@ a {
 .nav-link {
     position: relative;
     transition: color 0.2s;
-    color: black;
+    /*color: black;*/
     font-weight: 700;
     color: #294a94;
 }
@@ -167,9 +159,9 @@ a {
 }
 
 .column {
-    border: 2px solid #284292;
+    /*border: 2px solid #284292;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px;*/
     margin-top: 10px; /* Space between heading and column */
 }
 
@@ -291,10 +283,10 @@ a {
     }
     h2 {
         font-size: 18px;
-        text-align: center;
+        /*text-align: center;*/
     }
     h1 {
-        font-size: 24px;
+        /*font-size: 24px;*/
         text-align: center;
     }
     h3 {
@@ -431,18 +423,17 @@ a {
         padding: 0;
     }
     section {
-        padding: 60px 20px;
+        /*padding: 60px 20px;*/
         background-color: #aee0f9;
     }
     .container {
-        max-width: 1400px;
+        /* max-width: 1400px;*/
     }
 
     section a,
     section button {
         background-color: rgb(0, 119, 182, 55%);
         font-size: 18px;
-        /* font-family: "Inter", sans-serif; */
         color: white;
         text-decoration: none;
         width: -webkit-fit-content;
@@ -455,9 +446,9 @@ a {
         display: block;
         border: none;
     }
-    .heading-dy h2 {
+    /*.heading-dy h2 {
         font-size: 45px;
-    }
+    }*/
     /* Banner Area CSS */
     .banner-area {
         padding-bottom: 0;
@@ -479,8 +470,8 @@ a {
 } */
     .contain-head p {
         margin-top: 15px;
-        font-size: 20px;
-        text-align: left;
+        /*font-size: 20px;*/
+        /*text-align: left;*/
     }
     .contain-img img {
         /* width: 100%; */
@@ -511,7 +502,7 @@ a {
 
     .calculator-area {
         background-color: white;
-        background-image: url("<?php echo base_url() ?>application/views/assets/Calculator-banner.png");
+        background-image: url("application/views/assets/Calculator-banner.png");
         background-position: center;
         background-size: contain;
         padding: 120px 20px;
@@ -619,7 +610,7 @@ a {
         margin-top: 30px;
     }
     .howitwork .contain-instructions .contain-inst {
-        width: calc(25% - 60px);
+        /*width: calc(25% - 60px);*/
         position: relative;
     }
     .howitwork .contain-instructions .contain-inst:not(:last-child)::after {
@@ -641,9 +632,9 @@ a {
     }
     .howitwork .contain-instructions .contain-inst p {
         color: #03045e;
-        font-size: 20px;
+        /*font-size: 20px;*/
         text-align: center;
-        padding: 30px;
+        /*padding: 30px;*/
     }
     .contain-instructions {
         display: flex;
@@ -652,6 +643,10 @@ a {
     /* End How it work */
 
     /* Update Sec */
+    input[type="email"]::placeholder {
+        text-align: left;
+        padding-left: 0;
+    }
     form#updatefrm {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -659,6 +654,7 @@ a {
         -webkit-box-align: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
+        justify-content: center;
     }
     form#updatefrm button {
         border-radius: 0;
@@ -683,7 +679,7 @@ a {
     /* END OLD STYLE 2 */
 
     * {
-        /* font-family: "Poppins", sans-serif; */
+        font-family: "Poppins";
         font-weight: 400;
         font-style: normal;
     }
@@ -768,26 +764,26 @@ a {
         margin: 0;
     }
 
-    .row-one,
+    /*.row-one,
     .row-two,
     .row-three,
     .row-four {
         display: flex;
         flex-wrap: wrap;
         margin-top: 40px;
-    }
+    }*/
 
-    .row-two,
+    /*.row-two,
     .row-four {
         background-color: #81d0f8;
         width: 100%;
-    }
+    }*/
 
     .info {
         color: #03045e;
-        font-size: 18px;
+        /*font-size: 18px;*/
         line-height: 1.7em;
-        padding-right: 30px;
+        /*padding-right: 30px;*/
     }
 
     .column {
@@ -806,15 +802,15 @@ a {
     }
 
     .right {
-        flex: 55%;
-        display: flex;
+        /*flex: 55%;*/
+        /*display: flex;*/
         justify-content: center;
-        align-items: center;
+        /*align-items: center;*/
     }
 
     .img {
         max-width: 100%;
-        height: auto;
+        /*height: auto;*/
     }
 
     @media screen and (max-width: 900px) {
@@ -829,23 +825,21 @@ a {
             padding-left: 0; /* Adjust padding for smaller screens */
         }
 
-        .img1 {
+        /*.img1 {
             margin-left: 0; /* Remove the left margin to fit the image properly */
-        }
 
-        .column-right-new h2 {
+        /* .column-right-new h2 {
             font-size: 36px; /* Optional: Adjust the heading size for smaller screens */
-        }
 
         .column-right-new p {
-            font-size: 16px; /* Optional: Adjust the paragraph size for smaller screens */
+            /*font-size: 16px;*/ /* Optional: Adjust the paragraph size for smaller screens */
             padding: 0 5%; /* Reduce padding for smaller screens */
         }
         .contain-head h1,
         h4,
         p {
-            font-size: 2.5rem;
-            text-align: center;
+            /*font-size: 2.5rem;*/
+            /* text-align: center;*/
         }
         .head-secondary {
             font-size: 1.5rem;
@@ -867,13 +861,12 @@ a {
         }
         .sh-header {
             font-size: 1.6rem;
-            align-items: center;
         }
     }
 
     .title {
         color: #03045e;
-        font-size: 56px;
+        /*font-size: 56px;*/
         line-height: 1.2em;
         font-weight: 700;
         font-style: normal;
@@ -886,7 +879,7 @@ a {
     .list2 {
         padding-left: 50px;
         width: 100%;
-        font-size: 18px;
+        /*font-size: 18px;*/
         padding-right: 10px;
         box-sizing: border-box;
         line-height: 1.7em;
@@ -923,7 +916,7 @@ a {
         height: 30px;
     }
 
-    .row-two h2,
+    /*.row-two h2,
     .row-three h2,
     .row-five h2 {
         text-align: center;
@@ -934,14 +927,14 @@ a {
         font-style: normal;
         text-decoration: initial;
         letter-spacing: 0px;
-    }
+    }*/
 
-    .row-four {
+    /*.row-four {
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 0;
         padding-right: 0;
-    }
+    }*/
 
     .column-two-left {
         flex: 95%;
@@ -979,38 +972,38 @@ a {
         text-align: center;
     }
 
-    .row-five {
+    /*.row-five {
         height: 200px;
-    }
+    }*/
 
     .row-five h2 {
-        font-size: 56px;
+        /*font-size: 56px;*/
         line-height: 1.2em;
         font-weight: 700;
         font-style: normal;
         text-decoration: initial;
         letter-spacing: 0px;
-        margin-bottom: 20px;
+        /*margin-bottom: 20px;*/
     }
 
-    .img1 {
+    /*.img1 {
         width: 100%;
         height: auto;
         margin-left: 30px;
-    }
+    }*/
 
     .column-right-new {
         flex: 55%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        /*align-items: center;*/
         flex-direction: column;
     }
 
     .column-right-new h2 {
         text-align: center;
         color: #03045e;
-        font-size: 48px;
+        /*font-size: 48px;*/
         line-height: 1.6em;
         font-weight: 700;
         font-style: normal;
@@ -1020,7 +1013,7 @@ a {
     }
 
     .column-right-new p {
-        font-size: 18px;
+        /*font-size: 18px;*/
         line-height: 1.7em;
         color: #03045e;
         padding: 0 10%;
@@ -1041,33 +1034,28 @@ a {
             padding-left: 0; /* Adjust padding for smaller screens */
         }
 
-        .img1 {
-            margin-left: 0; /* Remove the left margin to fit the image properly */
-        }
-
         .column-right-new h2 {
-            font-size: 36px; /* Optional: Adjust the heading size for smaller screens */
+            /* font-size: 36px;*/ /* Optional: Adjust the heading size for smaller screens */
         }
 
         .column-right-new p {
             text-align: center;
-            font-size: 16px; /* Optional: Adjust the paragraph size for smaller screens */
+            /*font-size: 16px;*/ /* Optional: Adjust the paragraph size for smaller screens */
             padding: 0 5%; /* Reduce padding for smaller screens */
         }
 
-        .row-five h2,
+        /*.row-five h2,
         .row-three h2,
         .row-two h2 {
-            font-size: 36px; /* Optional: Adjust the heading size for smaller screens */
-        }
+            font-size: 36px; }/* Optional: Adjust the heading size for smaller screens */
 
-        .title {
+        /*.title {
             font-size: 40px;
             text-align: center;
-        }
+        }*/
 
         .info {
-            padding-right: 0;
+            /* padding-right: 0;*/
             text-align: center;
         }
 
@@ -1109,19 +1097,32 @@ a {
     }
 
     @media screen and (max-width: 495px) {
-        .input-group {
-            flex-direction: column; /* Stack input and button on small screens */
-            /* display: flex; */
+        .w-100 {
             justify-content: center;
-            align-items: center;
+        }
+        .input-group {
+            flex-direction: row; /* Stack input and button on small screens */
+            display: flex;
+            justify-content: center;
+            /*align-items: center;*/
         }
 
-        .input-group input {
-            width: 100%; /* Full width input */
-            margin-bottom: 10px; /* Space between input and button */
+        form#updatefrm input {
+            width: 70%; /* Full width input */
+            /*margin-bottom: 10px; /* Space between input and button */
         }
-        .input-group button {
-            width: 100%;
+        /*.input-group input {
+            width: 70px;
+        }/
+
+        /*.input-group button {
+            width: 30%;
+        }*/
+    }
+
+    @media screen and (max-width: 450px) {
+        .w-100 {
+            display: contents;
         }
     }
 
@@ -1169,14 +1170,14 @@ a {
 } */
 
     @media screen and (max-width: 505px) {
-        .input-group {
+        /*.input-group {
             flex-direction: row;
-        }
+        }*/
         .input-group-text {
             padding-block: 0.7rem;
-            position: absolute;
+            /*position: absolute;
             bottom: 10px;
-            right: 0;
+            right: 0;*/
         }
 
         .calculator-area h3 {
@@ -1223,16 +1224,22 @@ a {
 }
 /* end dropdown dimension */
 
-.contain-head h1,
+/*.contain-head h1,
 h4 {
     font-size: 2.5rem;
     text-align: left;
     font-weight: bold;
-}
+}*/
 .contain-head h4 {
     font-size: 1.7rem;
     font-weight: normal;
 }
-.contain-head .p-center {
+/*.contain-head .p-center {
     text-align: left;
+}*/
+
+@media screen and (max-width: 400px) {
+    form#updatefrm button {
+        width: 50%;
+    }
 }

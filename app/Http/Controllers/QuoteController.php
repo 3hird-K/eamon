@@ -50,6 +50,8 @@ class QuoteController extends Controller
             'shipperstateOrProvinceCode'     => 'required|string|max:10',    // Shipper's state/province code
             'shipperCountryName'             => 'required|string|max:255',
             'recipientCountryName'           => 'required|string|max:255',
+            'weight_unit' => 'required|string|max:255',
+
         ]);
         // try {
         // Retrieve form data
@@ -58,6 +60,9 @@ class QuoteController extends Controller
         $fromZip = $request->input('zipcodeFrom');
         $toZip = $request->input('zipcodeTo');
         $weight = $request->input('weight');
+        $weight_unit = $request->input('weight_unit');
+
+        // dd($weight_unit);
 
         $recipientStreet = $request->input('reFormattedAddress');
         $recipientCity = $request->input('recipientCity');
@@ -114,7 +119,7 @@ class QuoteController extends Controller
             'recipientCountryName' => $recipientCountryName,
             'postalInputShipper' => $postalInputShipper,
             'postalInputRecipient' => $postalInputRecipient,
-
+            'weight_unit' => $weight_unit,
         ]);
 
 
@@ -126,6 +131,7 @@ class QuoteController extends Controller
                 $weight,
                 $postalInputRecipient,
                 $postalInputShipper,
+                $weight_unit
             );
             // dd($rates);
 
@@ -396,7 +402,10 @@ class QuoteController extends Controller
 
          $request->merge(['residential' => $request->input('residential', false)]);
          $isResidential = $request->input('residential') ;
-         $residential = $isResidential ? true : false;
+        //  $residential = $isResidential ? true : false;
+         $residential = $isResidential ? false : true;
+
+         dd($residential);
 
         $description = $request->input('description');
         $length = $request->input('length');

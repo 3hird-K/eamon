@@ -70,6 +70,7 @@ class FedExService
         $weight,
         $postalInputRecipient,
         $postalInputShipper,
+        $weight_unit
     )
     {
         $endpoint = $this->isSandbox
@@ -123,7 +124,7 @@ class FedExService
                             "quantity"=> 1,
                             "quantityUnits"=> "PCS",
                             "weight"=> [
-                                "units"=> "LB",
+                                "units"=> $weight_unit,
                                 "value"=> $weight
                             ],
                             "customsValue"=> [
@@ -136,7 +137,7 @@ class FedExService
                 "requestedPackageLineItems"=> [
                     [
                         "weight"=> [
-                            "units"=> "LB",
+                            "units"=> $weight_unit,
                             "value"=> $weight
                         ]
                     ]
@@ -281,7 +282,7 @@ class FedExService
                       "currency"=> "USD"
                     ],
                     "weight"=> [
-                      "units"=> "LB",
+                      "units"=> session('weight_unit'),
                       "value"=> $weight
                     ]
                   ]
@@ -301,7 +302,7 @@ class FedExService
               "requestedPackageLineItems"=> [
                 [
                   "weight"=> [
-                    "units"=> "LB",
+                    "units"=> session('weight_unit'),
                     "value"=> $weight
                   ],
                 //   "dimensions" => [
@@ -426,7 +427,7 @@ public function getFullQuote(
                         "quantity"=> 1,
                         "quantityUnits"=> "PCS",
                         "weight"=> [
-                            "units"=> "LB",
+                            "units"=> session('weight_unit'),
                             "value"=> $weight
                         ],
                         "customsValue"=> [
@@ -439,7 +440,7 @@ public function getFullQuote(
             "requestedPackageLineItems"=> [
                 [
                     "weight"=> [
-                        "units"=> "LB",
+                        "units"=> session('weight_unit'),
                         "value"=> $weight
                     ],
                   "dimensions" => [

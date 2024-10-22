@@ -7,7 +7,7 @@
     <div class="text-center custom_bg_shipping py-5">
         <h3 class="text-white">This is the full quote of the requested Shipments, Pay to generate label.</h3>
     </div>
-    <h5 class="text-center my-4 text-dark">From {{ $data['fromCountry'] }} to {{ $data['toCountry'] }} — Weight: {{ $data['weight'] }} LBS</h5>
+    <h5 class="text-center my-4 text-dark">From {{ $data['fromCountry'] }} to {{ $data['toCountry'] }} — Weight: {{ $data['weight'] }} {{ session('weight_unit') }}</h5>
 
     {{-- Check if rates are available --}}
     @if(isset($fullRate['output']['rateReplyDetails']) && !empty($fullRate['output']['rateReplyDetails']))

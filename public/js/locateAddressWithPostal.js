@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (container) {
             Radar.ui.autocomplete({
                 container: containerId,
-                width: "600px", // Set desired width
+                width: "1000px", // Set desired width
                 maxHeight: "600px", // Set max height of the results box
                 placeholder: "Search address",
-                limit: 8, // Limit the number of results to show
+                limit: 10, // Limit the number of results to show
                 minCharacters: 3, // Minimum characters before showing suggestions
                 near: null, // Use default IP-based location
                 debounceMS: 100, // Wait time before fetching results
-                responsive: true, // Make the input responsive
+                responsive: false, // Make the input responsive
                 // layers: ["postalCode", "fine", "address"],
 
                 onResults: (addresses) => {

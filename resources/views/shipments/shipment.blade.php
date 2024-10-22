@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container-xl mt-5 p-4 my-5 rounded">
-    <h2 class="text-center">FedEx Shipping Calculator</h2>
+    <h2 class="text-center fw-bold" data-aos="zoom-in-down" data-aos-duration="700">FedEx Shipping Calculator</h2>
     <form action="{{ route('createFullQuote')}}" method="POST">
         @csrf
 
@@ -14,7 +14,7 @@
 
 
         <!-- Shipper and Recipient Info Section -->
-        <div class="card my-4 p-3 bg-white">
+        <div class="card my-4 p-3 bg-white" data-aos="zoom-in-down" data-aos-duration="700">
             <div class="card-header p-3 d-flex flex-column flex-md-row text-light justify-content-between align-items-center px-3 px-md-5" style="background-color: #4e148ce3; border-radius: 5px 5px 0 0;">
                 <div class="text-center text-sm-start mb-3 mb-md-0">
                     <h4 class="sh-header">Shipper & Recipient Information</h4>
@@ -44,7 +44,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="shipperName" class="fw-bold mb-2">Shipper Name*</label>
-                    <input type="text" class="form-control" id="shipperName" name="shipperName" placeholder="Enter shipper name" style="font-size: 15px; padding-block: 0.7rem;" required>
+                    <input type="text" class="form-control" id="shipperName" name="shipperName" placeholder="Enter Full Name" style="font-size: 15px; padding-block: 0.7rem;" required>
                 </div>
 
                 {{-- Shipper Phone --}}
@@ -74,21 +74,21 @@
                         <label for="shipperCity" class="fw-bold mb-2">City*</label>
                         <input type="text" class="form-control" id="shipperCity" name="shipperCity" placeholder="New York City" maxlength="35" style="font-size: 15px; padding-block: 0.7rem;" required >
                     </div>
-                    {{-- <div class="col-md-6 mb-3"> --}}
-                        {{-- <label for="zipcodeFrom" class="fw-bold mb-2">Postal Code</label> --}}
-                        <input type="hidden" class="form-control" id="zipcodeFrom" value="{{ session('zipcodeFrom', $zipcodeFrom) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
-                    {{-- </div> --}}
+                    <div class="col-md-6 mb-3">
+                        <label for="zipcodeFrom" class="fw-bold mb-2">Postal Code *</label>
+                        <input type="text" class="form-control" id="zipcodeFrom" value="{{ session('zipcodeFrom', $zipcodeFrom) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
+                    </div>
 
                 </div>
 
-                <h4 class="text-primary mt-4 sh-header">Recipient Information</h4>
+                <h4 class="text-primary mt-4 sh-header">Receiver Information</h4>
                 <input type="text" name="recipientCountryCode" value="{{ "{$recipientCountryName} - {$zipcodeTo} ({$recipientstateOrProvinceCode})" }}"
                 class="form-control fw-bold mb-3 py-3 text-center" disabled>
                 <input type="hidden" name="recipientCountryCode" vvalue="{{ "{$recipientCountryName} - {$zipcodeTo} ({$recipientstateOrProvinceCode})" }}" class="form-control fw-bold">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="recipientName" class="fw-bold mb-2">Recipient Name*</label>
-                        <input type="text" class="form-control" id="recipientName" name="recipientName" placeholder="Enter recipient name" value="{{ old('recipientName') }}" style="font-size: 15px; padding-block: 0.7rem;"  required>
+                        <input type="text" class="form-control" id="recipientName" name="recipientName" placeholder="Enter Full Name" value="{{ old('recipientName') }}" style="font-size: 15px; padding-block: 0.7rem;"  required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="recipientPhone" class="fw-bold mb-2">The recipient's phone number*</label>
@@ -133,7 +133,8 @@
                     <div class="form-check my-3 d-flex align-items-center justify-content-start">
                         <input class="form-check-input" type="checkbox" name="residential" id="residential" style="width: 20px; height: 20px; border: 1px solid rgba(44, 44, 44, 0.705); accent-color: black;">
                         <label class="form-check-label mx-2" for="residential" style="font-weight: bold; color: black;">
-                            I'm shipping to a residential address
+                            <!--I'm shipping to a residential address-->
+                            This is a business address
                         </label>
                     </div>
                 </div>
@@ -147,7 +148,7 @@
         </div>
 
         <!-- Shipment Details -->
-        <div class="card mb-4 my-4 p-3">
+        <div class="card mb-4 my-4 p-3" data-aos="zoom-in-down" data-aos-duration="700">
             <div class="card-header">
                 <h4 class="text-primary mt-4 sh-header">Shipment Details</h4>
             </div>
@@ -327,8 +328,8 @@
                     <input type="hidden" name="labelResponseOptions" value="URL_ONLY">
                 {{-- </div> --}}
             {{-- </div> --}}
-            <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary btn-lg" id="btn-submit" style="border-radius: 40px; padding-inline: 30px;">Submit Request</button>
+            <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="700">
+            <button type="submit" class="btn btn-primary btn-lg" id="btn-submit" style="border-radius: 40px; padding-inline: 30px;">Request Quote</button>
         </div>
         </div>
 

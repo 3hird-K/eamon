@@ -5,16 +5,634 @@
     font-weight: 400;
     font-style: normal;
 }
-.contain-head h1,
-h4 {
-    font-size: 2.5rem;
+
+.contain-head h1 {
+    font-size: 3vw;
     text-align: left;
-    font-weight: bold;
+    font-weight: 600;
+    color: #03045e;
 }
-.contain-head h4 {
-    font-size: 1.7rem;
+
+.heading-dy h2 {
+    font-size: 2.5vw;
+    text-align: left;
+    font-weight: 600;
+    color: #03045e;
+}
+
+.contain-head h4,
+.contain-head p {
+    color: #03045e;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.banner-area,
+.About-eamon-area heading-dy,
+.Update-sec heading-dy {
+    background-color: #aee0f9;
+}
+
+.btn-one,
+.btn-two {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+        rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/*.btn-one {*/
+/*    width: 40%;*/
+/*}*/
+
+/*.btn-two {*/
+/*    width: 35%;*/
+/*}*/
+
+.btn-one:hover,
+.btn-two:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+        rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+}
+
+.btn-one:active,
+.btn-two:active {
+    transform: translateY(2px);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px inset;
+}
+
+/*.btn-one, .btn-two{*/
+/*    text-decoration: none;*/
+/*    width: -webkit-fit-content;*/
+/*    width: -moz-fit-content;*/
+/*    width: fit-content;*/
+/*    color: white;*/
+/*    border-radius: 25px;*/
+/*    border: none;*/
+/*    font-size: 18px;*/
+/*    font-weight: 500;*/
+/*    padding-top: 10px;*/
+/*    padding-bottom: 10px;*/
+/*    background-color: hsla(197, 100%, 50%, 0.55); */
+/*    cursor: pointer;*/
+/*    transition: box-shadow .15s,transform .15s;*/
+/*}*/
+
+/*.btn-one{*/
+/*    width: 40%;*/
+/*}*/
+
+/*.btn-two{*/
+/*    width: 35%;*/
+/*}*/
+
+/*.btn-one, .btn-two{*/
+/*    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;*/
+/*}*/
+
+/*.btn-one:focus {*/
+/*    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+/*}*/
+
+/*.btn-two:focus {*/
+/*    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+/*}*/
+
+/*.btn-one:hover{*/
+/*    background-color: white;*/
+/*    color: #03045E;*/
+/*    transition: 0.2s;*/
+/*    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+/*.btn-two:hover{*/
+/*    background-color: white;*/
+/*    color: #03045E;*/
+/*    transition: 0.2s;*/
+/*    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+/*.btn-one:active {*/
+/*    box-shadow: #3c4fe0 0 3px 7px inset;*/
+/*    transform: translateY(2px);*/
+/*}*/
+
+/*.btn-two:active {*/
+/*    box-shadow: #3c4fe0 0 3px 7px inset;*/
+/*    transform: translateY(2px);*/
+/*}*/
+
+form#updatefrm button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+}
+
+/* end*/
+
+/* Banner Area CSS */
+
+/* changes */
+.contain-headings {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.contain-headings a {
+    align-self: center;
+}
+/* end */
+
+.banner-area {
+    padding-bottom: 0;
+    padding-top: 100px;
+}
+.contain-head h1 {
+    font-size: 3vw;
+}
+.banner-area .contain-head h4 {
+    font-size: 1.5vw;
+}
+.contain-head p {
+    margin-top: 15px;
+    font-size: 1vw;
+    text-align: left;
+}
+.contain-img > img {
+    max-width: 100%;
+}
+.img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+.contain-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+/* End Banner Area CSS */
+
+/* Calculator Sec */
+
+.calculator-area {
+    background-color: white;
+    background-image: url("<?php echo base_url() ?>application/views/assets/Calculator-banner.png");
+    background-position: center;
+    background-size: contain;
+    padding: 120px 20px;
+    background-color: #81d0f8;
+    background-repeat: no-repeat;
+}
+.contain-form {
+    background-color: #6cb4d9;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contain-form h3 {
+    background-color: #008dd7;
+    padding: 10px 30px;
+    text-align: center;
+    color: white;
+}
+.contain-fields {
+    padding: 30px;
+}
+.contain-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 5px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+}
+.fields {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: white;
+    max-width: calc(50% - 15px);
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+.fields input {
+    width: 100%;
+    border: none;
+}
+.contain-icons span {
+    font-weight: 600;
+    text-transform: capitalize;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+#calc-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+input::-webkit-input-placeholder {
+    padding-left: 20px;
+}
+input::-moz-placeholder {
+    padding-left: 20px;
+}
+input:-ms-input-placeholder {
+    padding-left: 20px;
+}
+input::-ms-input-placeholder {
+    padding-left: 20px;
+}
+input::placeholder {
+    padding-left: 20px;
+}
+.fields.zip input {
+    height: 50px;
+}
+.contain-perm {
+    border-left: 1px solid #ddd;
+}
+.calculator-area button {
+    border: none;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+/* End Calc Sec */
+
+/* How it work sec */
+.howitwork {
+    background-color: #81d0f8;
+}
+.howitwork h2 {
+    text-align: center;
+    font-size: 3vw;
+}
+.howitwork .contain-instructions {
+    margin-top: 30px;
+}
+.howitwork .contain-instructions .contain-inst {
+    width: calc(25% - 60px);
+    position: relative;
+}
+.howitwork .contain-instructions .contain-inst:not(:last-child)::after {
+    content: "";
+    background-image: url(img/arrow.png);
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    top: 100px;
+    left: calc(100% + 15px);
+}
+.howitwork .contain-instructions .contain-inst img {
+    width: 100%;
+}
+.howitwork .contain-instructions .contain-inst p {
+    color: #03045e;
+    font-size: 1vw;
+    text-align: center;
+    /*padding: 30px;*/
+    padding: 0 10px;
+    padding-top: 15px;
+}
+.contain-instructions {
+    display: flex;
+    justify-content: space-between;
+}
+/* End How it work */
+
+/* Update Sec */
+form#updatefrm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+form#updatefrm button {
+    border-radius: 0;
+    margin: 0;
     font-weight: normal;
+    padding: 5px 15px;
 }
-.contain-head .p-center {
-    text-align: left;
+form#updatefrm input {
+    border: none;
+    max-width: 300px;
+    width: 100%;
+    background: #d9d9d9;
+}
+form#updatefrm input::-webkit-input-placeholder,
+form#updatefrm input::-moz-placeholder,
+form#updatefrm input:-ms-input-placeholder,
+form#updatefrm input::-ms-input-placeholder,
+form#updatefrm input::placeholder {
+    color: black;
+}
+
+.request_service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* responsiveness */
+@media screen and (max-width: 1350px) {
+    .contain-head h1 {
+        font-size: 3.9vw;
+    }
+    .heading-dy h2 {
+        font-size: 3vw;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 2.5vw;
+    }
+    .contain-head p,
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 1.2vw;
+    }
+    .btn-one {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .w-100 {
+        justify-content: center;
+    }
+    .contain-head h1 {
+        font-size: 5vw;
+        text-align: center;
+    }
+    .heading-dy h2 {
+        font-size: 4vw;
+        text-align: center;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 3.5vw;
+        text-align: center;
+    }
+    .contain-head p {
+        font-size: 1.9vw;
+        text-align: center;
+    }
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 1.5vw;
+    }
+    .img {
+        width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+    }
+    .btn-one,
+    .btn-two {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    section {
+        padding: 40px 20px;
+    }
+    .contain-img {
+        flex: 100%;
+    }
+    .howitwork .contain-instructions .contain-inst {
+        width: calc(30% - 60px);
+    }
+    .px-5 {
+        margin: 0;
+    }
+    .btn-one {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contain-instructions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .howitwork .contain-instructions .contain-inst {
+        width: calc(50% - 60px);
+    }
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 1.9vw;
+    }
+
+    .request_service a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contain-head h1 {
+        font-size: 5.9vw;
+    }
+    .heading-dy h2 {
+        font-size: 4.5vw;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 4vw;
+    }
+    .contain-head p,
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contain-head h1 {
+        font-size: 5.9vw;
+    }
+    .heading-dy h2 {
+        font-size: 4.9vw;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 4vw;
+    }
+    .contain-head p,
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 2.5vw;
+    }
+    .btn-one {
+        width: 55%;
+    }
+
+    .btn-two {
+        width: 40%;
+    }
+    .howitwork .contain-instructions .contain-inst p {
+        padding: 0;
+        padding-top: 10px;
+    }
+    .howitwork .contain-instructions .contain-inst {
+        width: calc(60% - 60px);
+    }
+    section {
+        padding: 30px 20px;
+    }
+    .img {
+        width: 100%;
+    }
+    .input-group {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .btn-one {
+        width: 60%;
+    }
+    .btn-two {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contain-head h1 {
+        font-size: 7.5vw;
+    }
+    .heading-dy h2 {
+        font-size: 5.7vw;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 4.7vw;
+    }
+    .contain-head p,
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 3.3vw;
+    }
+    .btn-one {
+        width: 65%;
+    }
+    .btn-two {
+        width: 55%;
+    }
+    section {
+        padding: 20px 20px;
+    }
+    .img {
+        width: 100%;
+    }
+
+    .w-100 {
+        justify-content: center;
+    }
+    /*form#updatefrm input{
+        width: 100px;
+    }*/
+    /*form#updatefrm button{
+        width: 100px;
+    }*/
+    .px-5 {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .btn-one {
+        width: 80%;
+    }
+    .btn-two {
+        width: 65%;
+    }
+    .howitwork .contain-instructions .contain-inst {
+        width: calc(60% - 12px);
+    }
+    .w-100 {
+        justify-content: center;
+    }
+    .contain-head h1 {
+        font-size: 8vw;
+    }
+    .heading-dy h2 {
+        font-size: 7vw;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 5.5vw;
+    }
+    .contain-head p,
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 4vw;
+    }
+    .img {
+        width: 100%;
+    }
+    /*.btn-one{
+        width: 65%;
+    }
+    .btn-two{
+        width: 55%;
+    }*/
+}
+
+@media screen and (max-width: 420px) {
+    .btn-one {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 380px) {
+    .contain-head h1 {
+        font-size: 7.5vw;
+    }
+    .heading-dy h2 {
+        font-size: 5.1vw;
+    }
+    .banner-area .contain-head h4 {
+        font-size: 4.8vw;
+    }
+    .contain-head p,
+    .howitwork .contain-instructions .contain-inst p {
+        font-size: 3.5vw;
+    }
+    .btn-one {
+        width: 97%;
+    }
+    .btn-two {
+        width: 72%;
+    }
+    .w-100 {
+        justify-content: center;
+    }
+    .img {
+        width: 100%;
+    }
 }

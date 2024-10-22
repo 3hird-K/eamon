@@ -145,7 +145,7 @@ class PaymentController extends Controller
                 'pickupType' => session('pickupType'),
                 'postalInputShipper' => session('postalInputShipper'),
                 'postalInputRecipient' => session('postalInputRecipient'),
-                'labelStockType' => session('labelStockType'),
+                // 'labelStockType' => session('labelStockType'),
 
             ];
 
@@ -187,7 +187,7 @@ class PaymentController extends Controller
                 // $data['dimension_unit'],
             );
 
-            // dd($shipRequest);
+            dd($shipRequest);
 
             $value = session('reqErrorResponse');
 

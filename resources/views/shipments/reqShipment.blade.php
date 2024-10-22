@@ -7,7 +7,7 @@
     <div class="text-center custom_bg_shipping py-5">
         <h3 class="text-white">Explore Our Global Shipping Solutions: Services Available Here.</h3>
     </div>
-    <h5 class="text-center my-4 text-dark">From {{ $validatedData['fromCountry'] }} to {{ $validatedData['toCountry'] }} — Weight: {{ $validatedData['weight'] }} LBS</h5>
+    <h5 class="text-center my-4 text-dark">From {{ $validatedData['fromCountry'] }} to {{ $validatedData['toCountry'] }} — Weight: {{ $validatedData['weight'] }} {{ session('weight_unit') }}</h5>
 
     {{-- Check if rates are available --}}
     @if(isset($rates['output']['rateReplyDetails']) && !empty($rates['output']['rateReplyDetails']))
