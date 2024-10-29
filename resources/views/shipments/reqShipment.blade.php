@@ -3,6 +3,9 @@
 @section('css_content', 'css/style.css')
 
 @section('content')
+<body style="background-color: #A1E1FA">
+
+
 <div class="container-md">
     <div class="text-center custom_bg_shipping py-5">
         <h3 class="text-white">Explore Our Global Shipping Solutions: Services Available Here.</h3>
@@ -76,6 +79,7 @@
     @endif
 </div>
 
+</body>
 @endsection
 
 {{-- @section('js_content', 'js/register_animate.js') --}}

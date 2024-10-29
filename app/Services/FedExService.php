@@ -165,36 +165,43 @@ class FedExService
 
     // public function BookNow($personName, $phoneNo,$streetLines,$city,$stateOrProvinceCode,$postalCode,$countryCode,$shipDatestamp,$serviceType,$packagingType,$pickupType,$labelStockType,$imageType,$weight){
     public function BookNow(
-        $shipperName,
-        $shipperPhone,
-        $shipperStreet,
-        $shipperCity,
-        $shipperCountryCode,
-        $recipientName,
-        $recipientPhone,
-        $recipientStreet,
-        $recipientCity,
-        $recipientCountryCode,
-        $shipDate,
-        $packagingType,
-        $pickupType,
-        $labelStockType,
-        $labelResponseOptions,
-        $weight,
-        $serviceType,
-        $fromZip,
-        $toZip,
-        $shipperstateOrProvinceCode,
-        $recipientstateOrProvinceCode,
-        $totalNetCharge,
-        $customAmount,
-        $customQty,
-        $description,
-        // $length,
-        // $width,
-        // $height,
-        // $units
-        // $residential
+        $f_shipperName,
+        $f_shipperPhone,
+        $f_shipperStreet,
+        $f_shipperCity,
+        $f_shipperCountryCode,
+        $f_recipientName,
+        $f_recipientPhone,
+        $f_recipientStreet,
+        $f_recipientCity,
+        $f_recipientCountryCode,
+        $f_shipDate,
+        $f_packagingType,
+        $f_pickupType,
+        $f_labelStockType,
+        $f_labelResponseOptions,
+        $f_weight,
+        $f_serviceType,
+        $f_fromZip,
+        $f_toZip,
+        $f_shipperstateOrProvinceCode,
+        $f_recipientstateOrProvinceCode,
+        $f_totalNetCharge,
+        $f_customAmount,
+        $f_customQty,
+        $f_description,
+        $f_shipperCompany,
+        $f_recipientCompany,
+        $f_recipientStreet1,
+        $f_recipientStreet2,
+        $f_shipperEmail,
+        $f_recipientEmail,
+        $f_residential,
+        $f_length,
+        $f_width,
+        $f_height,
+        $f_units,
+        $f_imageType,
     ){
 
         // dd($customAmount, $customQty);
@@ -212,55 +219,58 @@ class FedExService
 
 
         $bookingData = [
-            "labelResponseOptions"=> $labelResponseOptions,
+            "labelResponseOptions"=> $f_labelResponseOptions,
             "requestedShipment"=> [
                 "shipper"=> [
                     "contact"=> [
-                        "personName"=> $shipperName,
-                        "phoneNumber"=> $shipperPhone,
-                        "companyName"=> "Company Name"
+                        "personName"=> $f_shipperName,
+                        "phoneNumber"=> $f_shipperPhone,
+                        "companyName"=> $f_shipperCompany,
+                        "emailAddress" => $f_shipperEmail
                     ],
                     "address"=> [
-                        "streetLines"=> [$shipperStreet],
-                        "city"=> $shipperCity,
-                        "stateOrProvinceCode"=> $shipperstateOrProvinceCode,
-                        "postalCode"=> $fromZip,
-                        "countryCode"=> $shipperCountryCode,
-                        // "residential"=> $residential
+                        "streetLines"=> [$f_shipperStreet],
+                        "city"=> $f_shipperCity,
+                        "stateOrProvinceCode"=> $f_shipperstateOrProvinceCode,
+                        "postalCode"=> $f_fromZip,
+                        "countryCode"=> $f_shipperCountryCode,
+                        "residential"=> $f_residential
                     ]
                 ],
                 "recipients"=> [
                     [
                         "contact"=> [
-                            "personName"=> $recipientName,
-                            "phoneNumber"=> $recipientPhone,
-                            "companyName"=> "Company Name"
+                            "personName"=> $f_recipientName,
+                            "phoneNumber"=> $f_recipientPhone,
+                            "companyName"=> $f_recipientCompany,
+                            "emailAddress" => $f_recipientEmail
                         ],
                         "address"=> [
                             "streetLines"=> [
-                                $recipientStreet,
-                                "Street Name",
-                                "Street Name"
+                                $f_recipientStreet,
+                                $f_recipientStreet1,
+                                $f_recipientStreet2,
                             ],
-                            "city"=> $recipientCity,
-                            "stateOrProvinceCode"=> $recipientstateOrProvinceCode,
-                            "postalCode"=> $toZip,
-                            "countryCode"=> $recipientCountryCode,
-                            // "residential"=> $residential
+                            "city"=> $f_recipientCity,
+                            "stateOrProvinceCode"=> $f_recipientstateOrProvinceCode,
+                            "postalCode"=> $f_toZip,
+                            "countryCode"=> $f_recipientCountryCode,
+                            "residential"=> $f_residential
                         ]
                     ]
                 ],
-                "shipDatestamp"=> $shipDate,
-              "serviceType"=> $serviceType,
-              "packagingType"=> $packagingType, // tobemodified
-              "pickupType"=> $pickupType,
+                "shipDatestamp"=> $f_shipDate,
+              "serviceType"=> $f_serviceType,
+              "packagingType"=> $f_packagingType, // tobemodified
+              "pickupType"=> $f_pickupType,
               "blockInsightVisibility"=> false,
               "shippingChargesPayment"=> [
                 "paymentType"=> "SENDER"
               ],
               "labelSpecification"=> [
                 "imageType"=> "PDF",
-                "labelStockType"=> $labelStockType
+                // "imageType"=> $f_imageType,
+                "labelStockType"=> $f_labelStockType
               ],
               "customsClearanceDetail"=> [
                 "dutiesPayment"=> [
@@ -269,21 +279,21 @@ class FedExService
                 "isDocumentOnly"=> true,
                 "commodities"=> [
                   [
-                    "description"=> $description,
+                    "description"=> $f_description,
                     "countryOfManufacture"=> "US",
-                    "quantity"=> $customQty,
+                    "quantity"=> $f_customQty,
                     "quantityUnits"=> "PCS",
                     "unitPrice"=> [
-                      "amount"=> $totalNetCharge,
+                      "amount"=> $f_totalNetCharge,
                       "currency"=> "USD"
                     ],
                     "customsValue"=> [
-                      "amount"=> $customAmount,
+                      "amount"=> $f_customAmount,
                       "currency"=> "USD"
                     ],
                     "weight"=> [
                       "units"=> session('weight_unit'),
-                      "value"=> $weight
+                      "value"=> $f_weight
                     ]
                   ]
                 ]
@@ -296,6 +306,7 @@ class FedExService
                   "documentFormat"=> [
                     "stockType"=> "PAPER_LETTER",
                     "docType"=> "PDF" // fixed to PDF
+                    // "docType"=> "PNG"
                   ]
                 ]
               ],
@@ -303,13 +314,17 @@ class FedExService
                 [
                   "weight"=> [
                     "units"=> session('weight_unit'),
-                    "value"=> $weight
+                    "value"=> $f_weight
                   ],
                 //   "dimensions" => [
-                //     "length" => $length,
-                //     "width" => $width,
-                //     "height" => $height,
-                //     "units" => $units
+                //     "length" => "10",
+                //     "width" => "10",
+                //     "height" =>"10",
+                //     "units" => "IN"
+                //     // "length" => $f_length,
+                //     // "width" => $f_width,
+                //     // "height" => $f_height,
+                //     // "units" => $f_units
                 //   ]
 
                 ]
@@ -320,7 +335,7 @@ class FedExService
             ]
             ];
 
-            // dd($bookingData);
+            // dump($bookingData);
 
 
 
@@ -357,21 +372,23 @@ class FedExService
 
 
 public function getFullQuote(
-    $fromCountry,
-    $toCountry,
-    $weight,
-    $postalInputRecipient,
-    $postalInputShipper,
-    $shipDate,
-    $residential,
-    $serviceType,
-    $description,
-    $length,
-    $width,
-    $height,
-    $units,
-    $packagingType,
-    $customsValueAmount
+    $f_fromCountry,
+    $f_toCountry,
+    $f_weight,
+    $f_postalInputRecipient,
+    $f_postalInputShipper,
+    $f_shipDate,
+    $f_residential,
+    $f_sresidential,
+    $f_serviceType,
+    $f_description,
+    $f_length,
+    $f_width,
+    $f_height,
+    $f_units,
+    $f_packagingType,
+    $f_customsValueAmount,
+    $f_customQty
 )
 {
     $endpoint = $this->isSandbox
@@ -397,22 +414,22 @@ public function getFullQuote(
         "requestedShipment"=> [
             "shipper"=> [
                 "address"=> [
-                    "postalCode"=> $postalInputShipper,
-                    "countryCode"=> $fromCountry,
-                    "residential" => $residential,
+                    "postalCode"=> $f_postalInputShipper,
+                    "countryCode"=> $f_fromCountry,
+                    "residential" => $f_sresidential,
                 ]
             ],
             "recipient"=> [
                 "address"=> [
-                    "postalCode"=> $postalInputRecipient,
-                    "countryCode"=> $toCountry,
-                    "residential" => $residential,
+                    "postalCode"=> $f_postalInputRecipient,
+                    "countryCode"=> $f_toCountry,
+                    "residential" => $f_residential,
                 ]
             ],
-            "shipDateStamp"=> $shipDate,
+            "shipDateStamp"=> $f_shipDate,
             "pickupType"=> "DROPOFF_AT_FEDEX_LOCATION",
             // "pickupType"=> "CONTACT_FEDEX_TO_SCHEDULE",
-            "serviceType"=> $serviceType,
+            "serviceType"=> $f_serviceType,
             "rateRequestType"=> ["LIST", "ACCOUNT"],
             "customsClearanceDetail"=> [
                 "dutiesPayment"=> [
@@ -423,45 +440,55 @@ public function getFullQuote(
                 ],
                 "commodities"=> [
                     [
-                        "description"=> $description,
-                        "quantity"=> 1,
+                        "description"=> $f_description,
+                        "quantity"=> $f_customQty,
                         "quantityUnits"=> "PCS",
                         "weight"=> [
                             "units"=> session('weight_unit'),
-                            "value"=> $weight
+                            "value"=> $f_weight
                         ],
                         "customsValue"=> [
-                            "amount"=> $customsValueAmount,
+                            "amount"=> $f_customsValueAmount,
+                            "currency"=> "USD"
+                        ]
+                        ],
+                    [
+                        "description"=> $f_description,
+                        "quantity"=> $f_customQty,
+                        "quantityUnits"=> "PCS",
+                        "weight"=> [
+                            "units"=> session('weight_unit'),
+                            "value"=> $f_weight
+                        ],
+                        "customsValue"=> [
+                            "amount"=> $f_customsValueAmount,
                             "currency"=> "USD"
                         ]
                     ]
                 ]
             ],
             "requestedPackageLineItems"=> [
+
                 [
                     "weight"=> [
                         "units"=> session('weight_unit'),
-                        "value"=> $weight
+                        "value"=> $f_weight
                     ],
                   "dimensions" => [
-                    // "length" => 10,
-                    // "width" => 10,
-                    // "height" => 10,
-                    // "units" => "IN"
-                    "length" => $length,
-                    "width" => $width,
-                    "height" => $height,
-                    "units" => $units
+                    "length" => $f_length,
+                    "width" => $f_width,
+                    "height" => $f_height,
+                    "units" => $f_units
                   ],
 
                 ],
 
             ],
-            "packagingType" => $packagingType,
+            "packagingType" => $f_packagingType,
         ]
                     ];
 
-                // dd($shipmentData);
+                dd($shipmentData);
 
 
 

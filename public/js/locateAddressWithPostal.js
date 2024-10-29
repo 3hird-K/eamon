@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (container) {
             Radar.ui.autocomplete({
                 container: containerId,
-                width: "1000px", // Set desired width
+                width: "500px", // Set desired width
                 maxHeight: "600px", // Set max height of the results box
                 placeholder: "Search address",
                 limit: 10, // Limit the number of results to show

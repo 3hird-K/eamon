@@ -63,8 +63,6 @@ Route::post('/createFullQuote', [QuoteController::class, 'getFullQuote'])->name(
 
 // Route::get('/search', [LocationController::class, 'search']);
 
-
-
 // Payment API
 
 Route::post('/payment', [PaymentController::class, 'processPayment'])->name('payment');

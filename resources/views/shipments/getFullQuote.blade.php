@@ -7,7 +7,7 @@
     <div class="text-center custom_bg_shipping py-5">
         <h3 class="text-white">This is the full quote of the requested Shipments, Pay to generate label.</h3>
     </div>
-    <h5 class="text-center my-4 text-dark">From {{ $data['fromCountry'] }} to {{ $data['toCountry'] }} — Weight: {{ $data['weight'] }} {{ session('weight_unit') }}</h5>
+    <h5 class="text-center my-4 text-dark">From {{ $data['f_fromCountry'] }} to {{ $data['f_toCountry'] }} — Weight: {{ $data['f_weight'] }} {{ session('weight_unit') }}</h5>
 
     {{-- Check if rates are available --}}
     @if(isset($fullRate['output']['rateReplyDetails']) && !empty($fullRate['output']['rateReplyDetails']))
@@ -37,8 +37,8 @@
                                 <div class="flex-grow-1 text-center">
                                     <!-- Center the service name -->
                                     <h6 class="card-title mb-0 fw-bold">{{ $rateDetail['serviceName'] ?? 'N/A' }}</h6>
-                                    <h6 class="card-title mb-0">Payer Name: {{ $data['shipperName'] }}</h6>
-                                    <h6 class="card-title mb-0">Payer Contact: {{ $data['shipperPhone'] }}</h6>
+                                    <h6 class="card-title mb-0">Payer Name: {{ $data['f_shipperName'] }}</h6>
+                                    <h6 class="card-title mb-0">Payer Contact: {{ $data['f_shipperPhone'] }}</h6>
 
                                     <input type="hidden" name="f_serviceType" value="{{ $rateDetail['serviceType'] ?? 'N/A' }}">
                                     <input type="hidden" name="finalCharge" value="{{ htmlspecialchars($finalCharge, ENT_QUOTES, 'UTF-8') }}">

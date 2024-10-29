@@ -36,7 +36,6 @@ class PaymentController extends Controller
         // dd($request->all());
 
         session(['f_totalNetCharge' => $amount,
-                //  'f_serviceType' => $serviceType,
                 ]);
 
 
@@ -112,82 +111,106 @@ class PaymentController extends Controller
 
 
             $data = [
-                'customQty' => session('customQty'),
-                'customAmount' => session('customAmount'),
-                'labelResponseOptions' => session('labelResponseOptions'),
-                'recipientPhone' => session('recipientPhone'),
-                'recipientName' => session('recipientName'),
-                'shipperPhone' => session('shipperPhone'),
-                'shipperName' => session('shipperName'),
-                'fromCountry' => session('fromCountry'),
-                'toCountry' => session('toCountry'),
-                'weight' => session('weight'),
-                'serviceType' => session('serviceType'),
-                'totalNetCharge' => session('f_totalNetCharge'),
-                'recipientStreet' => session('recipientStreet'),
-                'recipientCity' => session('recipientCity'),
-                'recipientstateOrProvinceCode' => session('recipientstateOrProvinceCode'),
-                'shipperStreet' => session('shipperStreet'),
-                'shipperCity' => session('shipperCity'),
-                'shipperstateOrProvinceCode' => session('shipperstateOrProvinceCode'),
-                'zipcodeFrom' => session('zipcodeFrom'),
-                'zipcodeTo' => session('zipcodeTo'),
-                'residential' => session('residential'),
-                'description' => session('description'),
-                'length' => session('length'),
-                'width' => session('width'),
-                'height' => session('height'),
-                'dimension_unit' => session('dimension_unit'),
-                'packagingType' => session('packagingType'),
-                'shipDate' => session('shipDate'),
-                'shipperCountryName' => session('shipperCountryName'),
-                'recipientCountryName' => session('recipientCountryName'),
-                'pickupType' => session('pickupType'),
-                'postalInputShipper' => session('postalInputShipper'),
-                'postalInputRecipient' => session('postalInputRecipient'),
-                // 'labelStockType' => session('labelStockType'),
+                // Custom and Label Information
+                'f_customQty' => session('f_customsValueQuantity'),
+                'f_customAmount' => session('f_customsValueAmount'),
+                'f_labelResponseOptions' => session('f_labelResponseOptions'),
 
+                // Recipient Information
+                'f_recipientPhone' => session('f_recipientPhone'),
+                'f_recipientName' => session('f_recipientName'),
+                'f_recipientStreet' => session('f_recipientStreet'),
+                'f_recipientCity' => session('f_recipientCity'),
+                'f_recipientstateOrProvinceCode' => session('f_recipientstateOrProvinceCode'),
+                'f_recipientCountryName' => session('f_recipientCountryName'),
+                'f_zipcodeTo' => session('f_zipcodeTo'),
+                'f_recipientCompany' => session('f_recipientCompany'),
+                'f_recipientEmail' => session('f_recipientEmail'),
+                'f_recipientStreet1' => session('f_recipientStreet1'),
+                'f_recipientStreet2' => session('f_recipientStreet2'),
+
+
+                // Shipper Information
+                'f_shipperPhone' => session('f_shipperPhone'),
+                'f_shipperName' => session('f_shipperName'),
+                'f_shipperStreet' => session('f_shipperStreet'),
+                'f_shipperCity' => session('f_shipperCity'),
+                'f_shipperstateOrProvinceCode' => session('f_shipperstateOrProvinceCode'),
+                'f_shipperCountryName' => session('f_shipperCountryName'),
+                'f_zipcodeFrom' => session('f_zipcodeFrom'),
+                'f_shipperCompany' => session('f_shipperCompany'),
+                'f_shipperEmail' => session('f_shipperEmail'),
+
+
+                // Other Inputs
+                'f_fromCountry' => session('fromCountry'),
+                'f_toCountry' => session('toCountry'),
+                'f_weight' => session('weight'),
+                'f_serviceType' => session('serviceType'),
+                'f_totalNetCharge' => session('f_totalNetCharge'),
+                'f_residential' => session('f_residential'),
+                'f_description' => session('f_description'),
+                'f_length' => session('f_length'),
+                'f_width' => session('f_width'),
+                'f_height' => session('f_height'),
+                'f_dimension_unit' => session('f_dimension_unit'),
+                'f_packagingType' => session('f_packagingType'),
+                'f_shipDate' => session('f_shipDate'),
+                'f_pickupType' => session('f_pickupType'),
+                'f_labelStockType' => session('f_labelStockType'),
+                'f_imageType' => session('f_imageType'),
+
+                // Postal Information
+                'f_postalInputShipper' => session('postalInputShipper'),
+                'f_postalInputRecipient' => session('postalInputRecipient'),
             ];
 
             // dd($data);
 
-            $labelStockType = 'PAPER_85X11_TOP_HALF_LABEL';
 
             $shipRequest = $this->fedExService->BookNow(
 
-                $data['shipperName'],
-                $data['shipperPhone'],
-                $data['shipperStreet'],
-                $data['shipperCity'],
-                $data['fromCountry'],
-                $data['recipientName'],
-                $data['recipientPhone'],
-                $data['recipientStreet'],
-                $data['recipientCity'],
-                $data['toCountry'],
-                $data['shipDate'],
-                $data['packagingType'],
-                $data['pickupType'],
-                $labelStockType,
-                $data['labelResponseOptions'],
-                $data['weight'],
-                $data['serviceType'],
-                $data['postalInputShipper'],
-                $data['postalInputRecipient'],
-                $data['shipperstateOrProvinceCode'],
-                $data['recipientstateOrProvinceCode'],
-                $data['totalNetCharge'],
-                $data['customAmount'],
-                $data['customQty'],
-                $data['description'],
-                // $data['residential']
-                // $data['length'],
-                // $data['width'],
-                // $data['height'],
-                // $data['dimension_unit'],
+                $data['f_shipperName'],
+                $data['f_shipperPhone'],
+                $data['f_shipperStreet'],
+                $data['f_shipperCity'],
+                $data['f_fromCountry'],
+                $data['f_recipientName'],
+                $data['f_recipientPhone'],
+                $data['f_recipientStreet'],
+                $data['f_recipientCity'],
+                $data['f_toCountry'],
+                $data['f_shipDate'],
+                $data['f_packagingType'],
+                $data['f_pickupType'],
+                $data['f_labelStockType'],
+                $data['f_labelResponseOptions'],
+                $data['f_weight'],
+                $data['f_serviceType'],
+                $data['f_postalInputShipper'],
+                $data['f_postalInputRecipient'],
+                $data['f_shipperstateOrProvinceCode'],
+                $data['f_recipientstateOrProvinceCode'],
+                $data['f_totalNetCharge'],
+                $data['f_customAmount'],
+                $data['f_customQty'],
+                $data['f_description'],
+                $data['f_shipperCompany'],
+                $data['f_recipientCompany'],
+                $data['f_recipientStreet1'],
+                $data['f_recipientStreet2'],
+                $data['f_shipperEmail'],
+                $data['f_recipientEmail'],
+                $data['f_residential'],
+                $data['f_length'],
+                $data['f_width'],
+                $data['f_height'],
+                $data['f_dimension_unit'],
+                $data['f_imageType'],
+
             );
 
-            dd($shipRequest);
+            // dd($shipRequest);
 
             $value = session('reqErrorResponse');
 
@@ -196,8 +219,12 @@ class PaymentController extends Controller
 
             }else{
                 session([
+
+                    // if(){}else{}
                     'trackingId' => $shipRequest['output']['transactionShipments'][0]['shipmentDocuments'][1]['trackingNumber'],
+                    // 'trackingId' => $shipRequest['output']['transactionShipments'][0]['pieceResponses'][0]['masterTrackingNumber'],
                     'trackingUrl' => $shipRequest['output']['transactionShipments'][0]['shipmentDocuments'][1]['url'],
+                    // 'trackingUrl' => $shipRequest['output']['transactionShipments'][0]['pieceResponses'][0]['packageDocuments'][0]["url"],
                     'serviceTyped' => $shipRequest['output']['transactionShipments'][0]['serviceType'],
                 ]);
 

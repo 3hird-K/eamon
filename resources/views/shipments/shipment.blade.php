@@ -5,6 +5,8 @@
     <script src="https://js.radar.com/v4.4.2/radar.min.js"></script>
 
 @section('content')
+
+<body style="background-color: #81D0f8">
 <div class="container-xl mt-5 p-4 my-5 rounded">
     <h2 class="text-center fw-bold" data-aos="zoom-in-down" data-aos-duration="700">FedEx Shipping Calculator</h2>
     <form action="{{ route('createFullQuote')}}" method="POST">
@@ -20,7 +22,7 @@
                     <h4 class="sh-header">Shipper & Recipient Information</h4>
                     <small>Fill in the details of the shipper and recipient.</small>
                     <p><span class="fw-bold">{{ $serviceType }}</span></p>
-                    <p>Total: <span class="fw-bold">$ {{ $totalNetCharge }}</span></p>
+                    <p>Initial Total: <span class="fw-bold">$ {{ $totalNetCharge }}</span></p>
 
                 </div>
                 <div class="text-center">
@@ -32,64 +34,117 @@
 
             <div class="card-body px-4">
                 <div>
-                <h4 class="text-primary sh-header">Shipper Information</h4>
-                <input type="text" name="shipperCountryCode" value="{{ "{$shipperCountryName} - {$zipcodeFrom} ({$shipperstateOrProvinceCode})" }}"
+                <h4 class="text-primary sh-header my-4">Shipper Information</h4>
+                {{-- <input type="text" name="shipperCountryCode" value="{{ "{$shipperCountryName} - {$zipcodeFrom} ({$shipperstateOrProvinceCode})" }}"
                 class="form-control fw-bold mb-3 py-3 text-center" disabled>
                 <input type="hidden" name="shipperCountryCode" value="{{ "{$shipperCountryName} - {$zipcodeFrom} ({$shipperstateOrProvinceCode})" }}"
-                class="form-control fw-bold">
+                class="form-control fw-bold"> --}}
                 </div>
                 <div class="row">
 
                     {{-- Shipper Name --}}
 
                 <div class="col-md-6 mb-3">
-                    <label for="shipperName" class="fw-bold mb-2">Shipper Name*</label>
+                    <label for="shipperName" class="fw-bold mb-2">Full Name*</label>
                     <input type="text" class="form-control" id="shipperName" name="shipperName" placeholder="Enter Full Name" style="font-size: 15px; padding-block: 0.7rem;" required>
                 </div>
 
-                {{-- Shipper Phone --}}
+                {{-- Company Name --}}
                 <div class="col-md-6 mb-3">
-                    <label for="shipperPhone" class="fw-bold mb-2">The shipper's phone number.*</label>
+                    <label for="shipperCompany" class="fw-bold mb-2">Company Name (Optional)</label>
+                    <input type="text" class="form-control" id="shipperCompany" name="shipperCompany" placeholder="Company name" style="font-size: 15px; padding-block: 0.7rem;" >
+                </div>
+
+                {{-- Email Add --}}
+                <div class="col-md-6 mb-3">
+                    <label for="shipperEmail" class="fw-bold mb-2">Email Address (Optional)</label>
+                    <input type="email" class="form-control" id="shipperEmail" name="shipperEmail" placeholder="Email Address"style="font-size: 15px; padding-block: 0.7rem;" >
+                </div>
+
+                 {{-- Shipper Phone --}}
+                <div class="col-md-6 mb-3">
+                    <label for="shipperPhone" class="fw-bold mb-2">Phone number.*</label>
                     <input type="tel" class="form-control" id="shipperPhone" name="shipperPhone" placeholder="(604) 555-7890" minlength="10" maxlength="15" style="font-size: 15px; padding-block: 0.7rem;" required>
                     <div class="error-message" id="phone-error" style="display: none; color: red;"></div>
-                    </div>
+                </div>
 
 
                     {{-- Shipper Street --}}
 
-                    <div class="col-md-6 mb-3">
-                        <label for="shipperStreet" class="fw-bold mb-2">Shipper Street*</label>
-                        <input type="text" class="form-control" id="shipperStreet" name="shipperStreet" placeholder="123 Main Street" style="font-size: 15px; padding-block: 0.7rem;" maxlength="35"
+                    <div class="col-md-12 mb-3">
+                        <label for="shipperStreet" class="fw-bold mb-2">Shipper Street (Modify)*</label>
+                        <input type="text" class="form-control" name="shipperStreet" placeholder="123 Main Street" style="font-size: 15px; padding-block: 0.7rem;" maxlength="35" value="{{ session('shipperStreet', $shipperStreet) }}"
                          required>
-
-
-
                     </div>
-                    {{-- <div class="col-md-6 mb-3"> --}}
-                        {{-- <label for="shipperCity" class="fw-bold mb-2">Province/State Code</label> --}}
-                        <input type="hidden" class="form-control text-uppercase" id="shipperstateOrProvinceCode" name="shipperstateOrProvinceCode" placeholder="AR (Argentina)" value="{{ old('shipperstateOrProvinceCode', $shipperstateOrProvinceCode ) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
 
-                    {{-- </div> --}}
-                    <div class="col-md-6 mb-3">
+                    {{-- Shipper City --}}
+                    <div class="col-md-3 mb-3">
                         <label for="shipperCity" class="fw-bold mb-2">City*</label>
-                        <input type="text" class="form-control" id="shipperCity" name="shipperCity" placeholder="New York City" maxlength="35" style="font-size: 15px; padding-block: 0.7rem;" required >
+                        <input type="text" class="form-control" id="shipperCity" name="shipperCity" placeholder="New York City" maxlength="35" style="font-size: 15px; padding-block: 0.7rem;" value="{{ session('shipperCity', $shipperCity) }}" required >
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="zipcodeFrom" class="fw-bold mb-2">Postal Code *</label>
-                        <input type="text" class="form-control" id="zipcodeFrom" value="{{ session('zipcodeFrom', $zipcodeFrom) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
+
+
+
+
+                    {{-- Shipper Postal --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="zipcodeFrom" class="fw-bold mb-2">Zip/Postal Code *</label>
+                        <input type="text" class="form-control" name="zipcodeFrom" id="zipcodeFrom" value="{{ session('zipcodeFrom', $zipcodeFrom) }}" placeholder="Postal/Zip Code" style="font-size: 15px; padding-block: 0.7rem;" required>
                     </div>
+
+                      {{-- Shipper State --}}
+                      <div class="col-md-3 mb-3">
+                        <label for="shipperstateOrProvinceCode" class="fw-bold mb-2">Province/State Code</label>
+                        <input type="text" class="form-control text-uppercase" id="shipperstateOrProvinceCode" name="shipperstateOrProvinceCode" placeholder="AR (Argentina)" value="{{ old('shipperstateOrProvinceCode', $shipperstateOrProvinceCode ) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
+
+                    </div>
+
+                    {{-- Shipper Country --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="shipperCountryName" class="fw-bold mb-2">Country *</label>
+                        <input type="text" class="form-control" name="shipperCountryName" id="shipperCountryName" placeholder="United States" value="{{ session('shipperCountryName', $shipperCountryName) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
+                    </div>
+
+                    <div class="col-md-12 my-3">
+                        <!-- Residential Address Checkbox -->
+                        <div class="form-check my-3 d-flex align-items-center justify-content-start">
+                            <input class="form-check-input" type="checkbox" name="shipresidential" id="shipresidential" style="width: 20px; height: 20px; border: 1px solid rgba(44, 44, 44, 0.705); accent-color: black;">
+                            <label class="form-check-label mx-2" for="shipresidential" style="font-weight: bold; color: black;">
+                                <!--I'm shipping to a residential address-->
+                                This is a business address
+                            </label>
+                        </div>
+                    </div>
+
 
                 </div>
 
-                <h4 class="text-primary mt-4 sh-header">Receiver Information</h4>
-                <input type="text" name="recipientCountryCode" value="{{ "{$recipientCountryName} - {$zipcodeTo} ({$recipientstateOrProvinceCode})" }}"
+                <h4 class="text-primary mt-4 sh-header my-4">Receiver Information</h4>
+                {{-- <input type="text" name="recipientCountryCode" value="{{ "{$recipientCountryName} - {$zipcodeTo} ({$recipientstateOrProvinceCode})" }}"
                 class="form-control fw-bold mb-3 py-3 text-center" disabled>
-                <input type="hidden" name="recipientCountryCode" vvalue="{{ "{$recipientCountryName} - {$zipcodeTo} ({$recipientstateOrProvinceCode})" }}" class="form-control fw-bold">
+                <input type="hidden" name="recipientCountryCode" vvalue="{{ "{$recipientCountryName} - {$zipcodeTo} ({$recipientstateOrProvinceCode})" }}" class="form-control fw-bold"> --}}
                 <div class="row">
+
+                    {{-- Recipient Name --}}
                     <div class="col-md-6 mb-3">
                         <label for="recipientName" class="fw-bold mb-2">Recipient Name*</label>
                         <input type="text" class="form-control" id="recipientName" name="recipientName" placeholder="Enter Full Name" value="{{ old('recipientName') }}" style="font-size: 15px; padding-block: 0.7rem;"  required>
                     </div>
+
+                     {{-- Company Name --}}
+                    <div class="col-md-6 mb-3">
+                        <label for="recipientCompany" class="fw-bold mb-2">Company Name (Optional)</label>
+                        <input type="text" class="form-control" id="recipientCompany" name="recipientCompany" placeholder="Company name" style="font-size: 15px; padding-block: 0.7rem;" >
+                    </div>
+
+                    {{-- Email Add --}}
+                    <div class="col-md-6 mb-3">
+                        <label for="recipientEmail" class="fw-bold mb-2">Email Address (Optional)</label>
+                        <input type="recipientEmail" class="form-control" id="recipientEmail" name="recipientEmail" placeholder="Email Address"style="font-size: 15px; padding-block: 0.7rem;" >
+                    </div>
+
+
+
                     <div class="col-md-6 mb-3">
                         <label for="recipientPhone" class="fw-bold mb-2">The recipient's phone number*</label>
                         <input type="tel" class="form-control" id="recipientPhone" name="recipientPhone"
@@ -109,18 +164,58 @@
                          @endif
                     </div>
 
-                    <div class="col-md-6 mb-3">
+                    {{-- Recipient Street 1 --}}
+                    <div class="col-md-12 mb-3">
                         <label for="recipientStreet" class="fw-bold mb-2">Recipient Street* </label>
-                        <input type="text" class="form-control" id="recipientStreet" name="recipientStreet" placeholder="123 Maple St" style="font-size: 15px; padding-block: 0.7rem;" maxlength="35" required>
+                        <input type="text" class="form-control" id="recipientStreet" name="recipientStreet" placeholder="123 Maple St" style="font-size: 15px; padding-block: 0.7rem;" value="{{ session('recipientStreet', $recipientStreet) }}" maxlength="35" required>
                     </div>
+                    <div class="col-md-12 mb-3">
+                        <input type="text" class="form-control" id="recipientStreet1" name="recipientStreet1" placeholder="Street 2 (Optional)" style="font-size: 15px; padding-block: 0.7rem;" maxlength="35">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <input type="text" class="form-control" id="recipientStreet2" name="recipientStreet2" placeholder="Street 3 (Optional)" style="font-size: 15px; padding-block: 0.7rem;" maxlength="35">
+                    </div>
+
+                    {{-- recipient City --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="recipientCity" class="fw-bold mb-2">City*</label>
+                        <input type="text" class="form-control" id="recipientCity" name="recipientCity" placeholder="New York City" maxlength="35" value="{{ session('recipientCity', $recipientCity) }}" style="font-size: 15px; padding-block: 0.7rem;" required >
+                    </div>
+
+
+
+
+                    {{-- recipient Postal --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="zipcodeTo" class="fw-bold mb-2">Zip/Postal Code *</label>
+                        <input type="text" class="form-control" name="zipcodeTo" id="zipcodeTo" placeholder="Postal/Zip Code" value="{{ session('zipcodeTo', $zipcodeTo) }}" style="font-size: 15px; padding-block: 0.7rem;" required>
+                    </div>
+
+
+                    {{-- Shipper State --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="recipientstateOrProvinceCode" class="fw-bold mb-2">Province/State Code</label>
+                        <input type="text" class="form-control text-uppercase" id="recipientstateOrProvinceCode" name="recipientstateOrProvinceCode" placeholder="AR (Argentina)" value="{{ old('recipientstateOrProvinceCode', $recipientstateOrProvinceCode ) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
+
+                    </div>
+
+
+                    {{-- recipient Country --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="recipientCountryName" class="fw-bold mb-2">Country *</label>
+                        <input type="text" class="form-control" name="recipientCountryName" id="recipientCountryName" placeholder="United States" value="{{ session('recipientCountryName', $recipientCountryName) }}" style="font-size: 15px; padding-block: 0.7rem;" required readonly>
+                    </div>
+
+
+
                     {{-- <div class="col-md-6 mb-3"> --}}
                         {{-- <label for="recipientstateOrProvinceCode" class="fw-bold mb-2">Province/State Code</label> --}}
                         <input type="hidden" class="form-control text-uppercase" id="recipientstateOrProvinceCode" name="recipientstateOrProvinceCode" placeholder="ON (Ontario)" required value="{{ old('recipientstateOrProvinceCode', $recipientstateOrProvinceCode) }}" max="2" style="font-size: 15px; padding-block: 0.7rem;" readonly>
                     {{-- </div> --}}
-                    <div class="col-md-6 mb-3">
+                    {{-- <div class="col-md-6 mb-3">
                         <label for="recipientCity" class="fw-bold mb-2">City*</label>
                         <input type="text" class="form-control" id="recipientCity" name="recipientCity" placeholder="Toronto" maxlength="35" style="font-size: 15px; padding-block: 0.7rem;"  required>
-                    </div>
+                    </div> --}}
                     {{-- <div class="col-md-6 mb-1"> --}}
                         {{-- <label for="zipcodeTo" class="fw-bold mb-2">Postal Code</label> --}}
                         <input type="hidden" class="form-control" id="zipcodeTo" value="{{ session('zipcodeTo', $zipcodeTo) }}" style="font-size: 15px; padding-block: 0.7rem;" readonly>
@@ -157,7 +252,7 @@
                     <!-- Ship Date Dropdown -->
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="shipDate" class="mb-2 fw-bold">Ship Date* (When do you want to ship?)</label>
+                        <label for="shipDate" class="mb-2 fw-bold">Ship Date* (When do you want to ship?)</label>
                         <select class="form-control" id="shipDate" name="shipDate" style="background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem;" required>
                             @for ($i = 0; $i <= 8; $i++)
                                 <option value="{{ now()->addDays($i)->format('Y-m-d') }}">
@@ -193,16 +288,16 @@
 
 
                     <!-- Pickup Type -->
-                    {{-- <div class="col-md-6"> --}}
-                        {{-- <label for="pickupType" class="fw-bold mb-2">Pickup Type</label> --}}
-                        {{-- <select class="form-control" id="pickupType" name="pickupType" style="background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem;" required>
+                    <div class="col-md-6">
+                        <label for="pickupType" class="fw-bold mb-2">Pickup Type</label>
+                        <select class="form-control" id="pickupType" name="pickupType" style="background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem;" required>
                             <option value="USE_SCHEDULED_PICKUP">Use Scheduled Pickup</option>
                             <option value="CONTACT_FEDEX_TO_SCHEDULE">Contact FedEx to Schedule</option>
                             <option value="DROPOFF_AT_FEDEX_LOCATION">Dropoff at FedEx Location</option>
-                        </select> --}}
+                        </select>
 
-                        <input type="hidden" name="pickupType" id="pickupType" value="DROPOFF_AT_FEDEX_LOCATION" style=" font-size: 15px; padding-block: 0.7rem;" class="form-control" readonly>
-                    {{-- </div> --}}
+                        {{-- <input type="hidden" name="pickupType" id="pickupType" value="DROPOFF_AT_FEDEX_LOCATION" style=" font-size: 15px; padding-block: 0.7rem;" class="form-control" readonly> --}}
+                    </div>
 
                     <div class="col-md-6">
                         <div class="mb-3">
@@ -218,6 +313,29 @@
 
                     </div>
 
+
+
+                    <div class="col-md-6">
+                        <div class=" mb-3">
+                            <label class="fw-bold mb-2">Package Value* ($)</label>
+
+                        {{-- <span class="input-group-text">$</span> --}}
+                        <input type="number" class="form-control" placeholder="Enter your estimated amount" name="customsValueAmount" min='1' style="background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem;" required>
+
+
+                    </div>
+                    </div>
+                    {{-- <div class="col-md-6"> --}}
+                        {{-- <div class="mb-3"> --}}
+                            {{-- <label class="fw-bold mb-2">Image Type*</label> --}}
+                            {{-- <select class="form-control" name="imageType" style="background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem;" required>
+                                <option value="PDF" selected>PDF</option>
+                                <option value="ZPLII">ZPLII</option>
+                                <option value="EPL2">EPL2</option>
+                                <option value="PNG">PNG</option>
+                            </select> --}}
+                        {{-- </div> --}}
+                    {{-- </div> --}}
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="fw-bold mb-2">Dimensions* L × W × H (Inches)</label>
@@ -239,17 +357,6 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class=" mb-3">
-                            <label class="fw-bold mb-2">Custom Amount* ($)</label>
-
-                        {{-- <span class="input-group-text">$</span> --}}
-                        <input type="number" class="form-control" placeholder="Enter your estimated amount" name="customsValueAmount" min='1' style="background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem;" required>
-
-
-                    </div>
-                    </div>
-
 
 
 
@@ -259,76 +366,13 @@
             </div>
         </div>
 
-        <!-- Label Specification -->
-        {{-- <div class="card mb-4"> --}}
-            {{-- <div class="card-header">
-                <h4>Tell me more about your goods:</h4>
-            </div>
-            <div class="card-body"> --}}
-
-            {{-- <div class="row"> --}}
-                {{-- <div class="col-md-6 input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">$</span>
-                    <input type="hidden" class="form-control" placeholder="Enter your estimated amount" name="customsValueAmount" value="200" required>
-
-                </div> --}}
-                {{-- <div class="col-md-6 input-group mb-3"> --}}
-                    {{-- <span class="input-group-text" id="basic-addon1">qty.</span> --}}
                     <input type="hidden" value="1" class="form-control" name="customsValueQuantity" required>
-
-                {{-- </div> --}}
-            {{-- </div> --}}
-
-
-
-                <!-- <div class="row"> -->
-                    <!-- <div class="col-md-6 mb-3">
-                        <label for="imageType">Image Type</label>
-                        <select class="form-control" id="imageType" name="imageType" required>
-                            <option value="PDF">PDF</option>
-                            <option value="PNG">PNG</option>
-                        </select>
-                    </div>                     -->
-                    <!-- <div class="col-md-6 mb-3">
-                        <label for="labelStockType">Label Stock Type</label>
-                        <select class="form-control" id="labelStockType" name="labelStockType" required>
-                            <option value="PAPER_4X6">PAPER 4x6</option>
-                            <option value="PAPER_4X675">PAPER 4x6.75</option>
-                            <option value="PAPER_4X8">PAPER 4x8</option>
-                            <option value="PAPER_4X9">PAPER 4x9</option>
-                            <option value="PAPER_7X475">PAPER 7x4.75</option>
-                            <option value="PAPER_85X11_BOTTOM_HALF_LABEL">PAPER 8.5x11 Bottom Half Label</option>
-                            <option value="PAPER_85X11_TOP_HALF_LABEL">PAPER 8.5x11 Top Half Label</option>
-                            <option value="PAPER_LETTER">PAPER LETTER</option>
-                            <option value="STOCK_4X675_LEADING_DOC_TAB">STOCK 4x6.75 Leading Doc Tab</option>
-                            <option value="STOCK_4X8">STOCK 4x8</option>
-                            <option value="STOCK_4X9_LEADING_DOC_TAB">STOCK 4x9 Leading Doc Tab</option>
-                            <option value="STOCK_4X6">STOCK 4x6</option>
-                            <option value="STOCK_4X675_TRAILING_DOC_TAB">STOCK 4x6.75 Trailing Doc Tab</option>
-                            <option value="STOCK_4X9_TRAILING_DOC_TAB">STOCK 4x9 Trailing Doc Tab</option>
-                            <option value="STOCK_4X9">STOCK 4x9</option>
-                            <option value="STOCK_4X85_TRAILING_DOC_TAB">STOCK 4x8.5 Trailing Doc Tab</option>
-                            <option value="STOCK_4X105_TRAILING_DOC_TAB">STOCK 4x10.5 Trailing Doc Tab</option>
-                        </select> -->
-
-
-                    <!-- </div> -->
-                    <!-- <div class="col-md-6 mb-3"> -->
-                        <!-- <label for="labelResponseOptions">Label Response Options</label>
-                        <select class="form-control" id="labelResponseOptions" name="labelResponseOptions" required>
-                            <option value="LABEL">Label</option>
-                            <option value="URL_ONLY">URL Only</option>
-                        </select> -->
-
-
-                    <!-- </div> -->
-
-                    <input type="hidden" name="labelStockType" value="PAPER_LETTER">
+                    <input type="hidden" name="labelStockType" value="PAPER_85X11_TOP_HALF_LABEL">
                     <input type="hidden" name="imageType" value="PDF">
                     <input type="hidden" name="labelResponseOptions" value="URL_ONLY">
                 {{-- </div> --}}
             {{-- </div> --}}
-            <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="700">
+            <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-duration="700">
             <button type="submit" class="btn btn-primary btn-lg" id="btn-submit" style="border-radius: 40px; padding-inline: 30px;">Request Quote</button>
         </div>
         </div>
@@ -336,28 +380,7 @@
 
     </form>
 </div>
-
-{{-- <input type="text" value={{ session('zipcodeTo') }} id="autocomplete"> --}}
-{{-- <input type="text" value={{ session('zipcodeTo') }} id="autocomplete"> --}}
-
-{{-- <div id="autocomplete" /> --}}
-
-{{-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const weightInput = parseInt(document.getElementById('weightInput').value, 10);
-        const select = document.getElementById('packagingType');
-        const options = select.options;
-
-        // Iterate over the options to show/hide based on weight
-        for (let i = options.length - 1; i >= 0; i--) {
-            const optionWeight = parseInt(options[i].getAttribute('data-weight'), 10);
-            if (optionWeight <= weightInput) {
-                select.remove(i);
-            }
-        }
-    });
-</script> --}}
-
+</body>
 <script>
     document.getElementById('calc-form').addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent form submission until validation is done

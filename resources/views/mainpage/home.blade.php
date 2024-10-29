@@ -39,13 +39,13 @@
         <div class="container-form p-2 rounded shadow-lg bg-white" style="max-width: 1200px; margin: auto; ">
             <h3 class="text-center text-white bg-primary py-4 rounded mb-3">Get a Quote Without Signing Up</h3>
 
-            <form class=" row d-flex w-100 justify-content-between align-items-center mx-auto mt-2 px-3" id="calc-form" action="{{ route('retrieveShipments') }}" method="get">
+            <form class=" row d-flex w-100 justify-content-around align-items-center mx-auto mt-2 px-5 py-4" id="calc-form" action="{{ route('retrieveShipments') }}" method="get">
                 @csrf
                     <!-- First Column -->
-                    <div class="col-md-4">
+                    <div class="col-lg-3 px-0">
 
                         {{-- Complete Address --}}
-                        <div class="mb-3">
+                        <div class="">
                             <label for="shipperStreet" class="fw-bold mb-2">Sender Address*</label>
                             <input type="text" class="form-control" id="shipperStreet" name="shipperStreet" placeholder="Enter Zip code or full address" style='background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem; max-width: 100%;'  required>
 
@@ -69,9 +69,9 @@
                     </div>
 
                     <!-- Second Column -->
-                    <div class="col-md-4">
+                    <div class="col-lg-3 px-0">
                         {{-- Complete Address --}}
-                        <div class="mb-3">
+                        <div class="">
                             <label for="recipientStreet" class="fw-bold mb-2">Reciever Address*</label>
                             <input type="text" class="form-control" id="recipientStreet" name="recipientStreet" placeholder="Enter Zip code or full address"  style='background-color: #eeeeee; font-size: 15px; padding-block: 0.7rem; '  required>
                         </div>
@@ -91,8 +91,8 @@
 
                     </div>
                         <!-- Weight Input -->
-                    <div class="col-md-2">
-                        <div class="mb-3">
+                    <div class="col-lg-3 px-0">
+                        <div class="">
                             <label for="weight" class="form-label d-flex align-items-center fw-bold">
                                 <i class="bi bi-box-seam me-2"></i> Weight*
                             </label>
@@ -112,12 +112,10 @@
 
 
                     </div>
-                    <div class="col-md-1 mt-3 mt-sm-0">
+                    <div class="col-lg-2 p-1">
                         <!-- Submit Button -->
-                        <div class=" d-flex justify-content-center align-items-center mt-3 mb-sm-3">
-                            <button type="submit" class="btn btn-primary  px-4 " style="padding: 10px 0; border-radius: 50px;">GetQuote</button>
-                            <!--<button type="submit" class="btn btn-primary btn-one" style="border-radius: 50px; padding-block: 0.6rem">GetQuote</button>-->
-
+                        <div class=" mt-3 mb-sm-3">
+                            <button type="submit" class="btn btn-primary btn-one" style="border-radius: 50px; padding-block: 0.6rem; width: 100%;">GetQuote</button>
                         </div>
                     </div>
 
