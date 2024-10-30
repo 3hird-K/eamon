@@ -475,10 +475,10 @@ public function getFullQuote(
                         "value"=> $f_weight
                     ],
                   "dimensions" => [
-                    "length" => $f_length,
-                    "width" => $f_width,
-                    "height" => $f_height,
-                    "units" => $f_units
+                        "length" => $f_length,
+                        "width" => $f_width,
+                        "height" => $f_height,
+                        "units" => $f_units
                   ],
 
                 ],
@@ -488,7 +488,7 @@ public function getFullQuote(
         ]
                     ];
 
-                dd($shipmentData);
+                // dd($shipmentData);
 
 
 

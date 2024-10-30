@@ -18,9 +18,7 @@
                         <div class="card bg-light text-dark shadow">
 
 
-                        <form action="{{ route('payment') }}" method="POST">
 
-                            @csrf
 
                             <?php
                                 // Assuming $rateDetail is already defined and has the required data
@@ -29,7 +27,7 @@
                                 $totalNetCharge = $finalCharge + $additionalCharge; // Total including 30%
                             ?>
 
-                        <div class="card-body d-flex align-items-center px-md-5 py-5">
+                            <div class="card-body d-flex align-items-center px-md-5 py-5">
                                 <div class="me-3">
                                     <!-- Align logo to the left with margin end -->
                                     <img src="{{ asset('img/logo.png') }}" alt="Service Logo" style="width: 100px;  max-width: 100%; height: auto;" class="img-fluid">
@@ -47,19 +45,29 @@
                                 <div class="text-end">
                                     <h5 class="text-primary">${{ htmlspecialchars($totalNetCharge, ENT_QUOTES, 'UTF-8') }}
                                         {{ $rateDetail['ratedShipmentDetails'][0]['currency'] ?? 'USD' }}</h5>
-                                    <button type="submit" class="btn btn-primary">Pay Using Paypal</button>
+                                        <small class="text-muted">Total Surcharges: ${{ htmlspecialchars(json_decode($rateDetail['ratedShipmentDetails'][0]['shipmentRateDetail']['totalSurcharges'] ?? 'N/A'), ENT_QUOTES, 'UTF-8') }}
+                                            {{ $rateDetail['ratedShipmentDetails'][0]['currency'] ?? 'USD' }}</small>
 
                                 </div>
                             </div>
 
 
 
-                            <div class="card-footer bg-light text-end">
-                                <small class="text-muted">Total Surcharges: ${{ htmlspecialchars(json_decode($rateDetail['ratedShipmentDetails'][0]['shipmentRateDetail']['totalSurcharges'] ?? 'N/A'), ENT_QUOTES, 'UTF-8') }}
-                                {{ $rateDetail['ratedShipmentDetails'][0]['currency'] ?? 'USD' }}</small>
+                            <div class="card-footer bg-light text-center ">
+                                <form action="{{ route('payment') }}" method="POST">
+
+                                    @csrf
+                                <button type="submit" class="btn btn-primary mx-1">Pay Using Paypal</button>
+                            </form>
+                                <form action="{{ route('shipPage') }}">
+                                    <button type="submit" class="btn btn-danger mx-1">Cancel Shipment</button>
+                                </form>
+
                             </div>
 
-                        </form>
+
+
+
 
                         </div>
                     </div>
